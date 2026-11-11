@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chicken Kris Kringle</title>
+<style>
+:root{--bg:#0b5d2a;--bg2:#0e7a37;--page:#fffbea;--text:#1a1a1a;--hd:#b30000;--hdt:#fff;--btn:#d9d2c0;--bl:#fff;--bd:#8a8470;--red:#b30000;--gold:#ffd700;--inp:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#06260f;--bg2:#09361a;--page:#1c2a1f;--text:#f3efe0;--hd:#8c0000;--btn:#3b4a3d;--bl:#7a9a7e;--bd:#0d150e;--red:#ff7070;--inp:#0f1a11;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#06260f;--bg2:#09361a;--page:#1c2a1f;--text:#f3efe0;--hd:#8c0000;--btn:#3b4a3d;--bl:#7a9a7e;--bd:#0d150e;--red:#ff7070;--inp:#0f1a11;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;color:var(--text);font:17px/1.4 "Times New Roman",Times,serif;background:var(--bg) repeating-conic-gradient(var(--bg2) 0 25%,var(--bg) 0 50%) 0 0/24px 24px}
+main{max-width:480px;margin:10px auto;padding:0 8px;position:relative;z-index:1}
+.win{background:var(--page);border:4px ridge var(--bl);padding:10px;margin-bottom:12px}
+.ttl{background:var(--hd);color:var(--hdt);font:bold 15px Verdana,sans-serif;padding:4px 8px;margin:-10px -10px 10px}
+h1{font:bold 30px "Comic Sans MS","Comic Sans",cursive,sans-serif;text-align:center;margin:4px 0;color:var(--red);text-shadow:2px 2px 0 var(--gold)}
+.banner{display:flex;align-items:center;justify-content:space-between}
+.banner svg{width:68px;height:68px;flex:none}
+.flip{transform:scaleX(-1)}
+.lights{height:16px;margin:6px 0;background:
+radial-gradient(circle at 8px 8px,#f33 5px,transparent 6px) 0 0/64px 16px,
+radial-gradient(circle at 24px 8px,#fd0 5px,transparent 6px) 0 0/64px 16px,
+radial-gradient(circle at 40px 8px,#2c2 5px,transparent 6px) 0 0/64px 16px,
+radial-gradient(circle at 56px 8px,#39f 5px,transparent 6px) 0 0/64px 16px;animation:bl 1.2s steps(2) infinite}
+@keyframes bl{50%{opacity:.55}}
+.mq{overflow:hidden;white-space:nowrap;background:#000;color:#0f0;font:14px "Courier New",monospace;padding:3px;border:2px inset var(--bd)}
+.mq span{display:inline-block;padding-left:100%;animation:mq 16s linear infinite}
+@keyframes mq{to{transform:translateX(-100%)}}
+.sm{font:12px Verdana,sans-serif}
+button.lnk{color:#0000ee;text-decoration:underline;cursor:pointer;background:none;border:0;padding:0;font:inherit}
+button.b{font:bold 16px "Comic Sans MS",cursive,sans-serif;color:var(--text);background:var(--btn);border:3px outset var(--bl);padding:10px 12px;cursor:pointer}
+button.b.g{background:var(--red);color:#fff}
+button.b:active{border-style:inset}
+button.w{width:100%;margin:6px 0}
+select{width:100%;font:16px Verdana,sans-serif;color:var(--text);background:var(--inp);border:2px inset var(--bd);padding:8px}
+.er{color:var(--red);font-weight:bold;font-size:14px;min-height:1em}
+.big{font:bold 36px "Comic Sans MS",cursive,sans-serif;color:var(--red);text-align:center;word-break:break-word;margin:8px 0}
+.c{text-align:center}
+.cnt{background:#000;color:#f00;font:bold 16px "Courier New",monospace;padding:1px 6px;letter-spacing:2px;border:2px inset var(--bd)}
+hr{border:0;height:4px;background:repeating-linear-gradient(90deg,var(--red) 0 8px,#2a8a3a 8px 16px)}
+#snow{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:5}
+.fl{position:absolute;top:-8vh;color:#fff;text-shadow:0 0 3px #7af;animation:fall linear infinite}
+@keyframes fall{to{transform:translateY(112vh) rotate(360deg)}}
+.rules{margin-top:8px;text-align:center;font:bold 15px Verdana,sans-serif;background:var(--gold);color:#000;border:2px dashed var(--red);padding:6px}
+@media (prefers-reduced-motion:reduce){.fl,.lights,.mq span{animation:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="ck" viewBox="0 0 100 100">
+<path d="M24 54Q4 34 14 22Q26 32 30 50Z" fill="#f4f4f4" stroke="#333" stroke-width="2"></path>
+<ellipse cx="50" cy="62" rx="30" ry="24" fill="#fff" stroke="#333" stroke-width="2"></ellipse>
+<path d="M36 60Q50 46 66 62Q50 76 36 60Z" fill="#e8e8e8" stroke="#333" stroke-width="2"></path>
+<path d="M44 85L42 95M44 85L36 95M44 85L50 95M58 85L56 95M58 85L50 95M58 85L64 95" stroke="#f90" stroke-width="3" fill="none" stroke-linecap="round"></path>
+<circle cx="68" cy="34" r="14" fill="#fff" stroke="#333" stroke-width="2"></circle>
+<path d="M80 31L96 37L80 42Z" fill="#f90" stroke="#a50" stroke-width="1.5"></path>
+<ellipse cx="79" cy="48" rx="4" ry="6" fill="#d00" stroke="#600" stroke-width="1.5"></ellipse>
+<circle cx="71" cy="32" r="2.6" fill="#000"></circle>
+<path d="M53 27L72 4L86 28Z" fill="#d11" stroke="#600" stroke-width="2" stroke-linejoin="round"></path>
+<ellipse cx="69" cy="27" rx="17" ry="4.5" fill="#fff" stroke="#999" stroke-width="1.5"></ellipse>
+<circle cx="73" cy="4" r="5.5" fill="#fff" stroke="#999" stroke-width="1.5"></circle></symbol></defs></svg>
+<div id="snow"></div>
+<main><div id="app"></div></main>
+<script type="application/json" id="state">{"drawn":true,"id":"5hugyvgg8t","people":[{"n":"Tom","p":1},{"n":"Priscilla","p":0},{"n":"Richard","p":3},{"n":"Charlotte","p":2},{"n":"Terence","p":5},{"n":"Larisa","p":4},{"n":"Clarisse","p":7},{"n":"Kate","p":6},{"n":"Effie","p":9},{"n":"Rob","p":8},{"n":"Mouse","p":11},{"n":"Fox","p":10},{"n":"Ida","p":-1}],"enc":["==QZ0F2S6s2a","49mR6s2a","t9GV6s2a","hNXayFGT6s2a","i9mU6s2a","=U2czlmchx2Q6s2a","=UWamZWR6s2a","=U2c19WT6s2a","hRWS6s2a","==AZyFGajlmU6s2a","lRHdvxmchh2Q6s2a","==QZj5WZyVGV6s2a","hxGbpN2cpJHU6s2a"]}</script>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var app=$('app');
+  var st=JSON.parse($('state').textContent);
+  var people=st.people.map(function(p){return {name:p.n,partner:p.p}});
+  var user=null,art=null,loaded=false,ui={msg:'',rc:false};
+  var CK='<svg viewBox="0 0 100 100"><use href="#ck"/></svg>';
+  function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML}
+  function enc(s){return btoa(unescape(encodeURIComponent('kk:'+s))).split('').reverse().join('')}
+  function dec(s){try{return decodeURIComponent(escape(atob(s.split('').reverse().join('')))).slice(3)}catch(e){return '???'}}
+  function isOwner(){return false}
+  function getMe(){try{return localStorage.getItem('kk-me-'+st.id)||''}catch(e){return ''}}
+  function setMe(v){try{if(v)localStorage.setItem('kk-me-'+st.id,v);else localStorage.removeItem('kk-me-'+st.id)}catch(e){}}
+
+  // snowfall
+  var sn=$('snow'),k;
+  for(k=0;k<16;k++){var f=document.createElement('span');f.className='fl';f.textContent='❄';
+    f.style.left=Math.round(Math.random()*96)+'%';f.style.fontSize=(10+Math.random()*16)+'px';
+    f.style.animationDuration=(7+Math.random()*9)+'s';f.style.animationDelay=(-Math.random()*12)+'s';sn.appendChild(f)}
+
+  function head(){
+    return '<div class="win"><div class="ttl">🎄 Merry Christmas from the Coop!!</div>'+
+    '<div class="banner"><div>'+CK.replace('<svg','<svg class="flip"')+'</div><h1>Chicken<br>Kris Kringle</h1><div>'+CK+'</div></div>'+
+    '<div class="lights"></div>'+
+    '<div class="mq"><span>*** Cluck cluck! Ho ho ho! Budget is $30! No wishlists allowed! Merry Christmas! ***</span></div><div class="rules">🎁 Budget: <b>$30</b> &nbsp;|&nbsp; 🚫 No wishlists allowed!</div></div>';
+  }
+  function foot(){
+    var s=' style="width:40px;height:40px"';
+    return '<div class="win c sm">🎅 You are visitor #<span class="cnt">001225</span> 🎅<hr>'+
+    '<div>'+CK.replace('<svg','<svg'+s)+'🎄'+CK.replace('<svg','<svg class="flip"'+s)+'</div>'+
+    'Best viewed in Netscape Navigator 4.0 at 800x600<br>© 2000 The Coop. Happy Holidays!</div>';
+  }
+
+  function ownerHtml(){
+    return '<div class="win c"><div class="ttl">Organiser: ready to draw</div>'+
+      '<p>'+people.length+' people loaded. Partners can’t draw each other.</p>'+
+      '<button class="b g w" data-a="draw">🎄 DRAW THE NAMES 🎄</button>'+
+      '<div class="er">'+esc(ui.msg)+'</div>'+
+      '<p class="sm">After drawing, tap <b>Share</b> at the top of this page, let anyone with the link view it, then send the link on Messenger.</p></div>';
+  }
+  function waitHtml(){
+    return '<div class="win c"><div class="ttl">Please wait...</div>'+
+      (loaded?'<p>🎁 Santa’s still getting ready!<br>The names haven’t been drawn yet. Check back soon!</p>':'<p>Loading... please wait.</p>')+'</div>';
+  }
+  function pickHtml(){
+    var h='',me=getMe(),mi=-1;
+    people.forEach(function(p,i){if(p.name===me)mi=i});
+    if(ui.reveal!==undefined){
+      h='<div class="win c"><div class="ttl">Top secret!</div><p>You are buying a present for...</p><div class="big">'+esc(dec(st.enc[ui.reveal]))+'</div>'+
+        '<div style="width:90px;margin:0 auto">'+CK+'</div><p class="sm">Shhh! Don’t tell anyone. Come back to this page any time to see it again.</p><p class="sm"><b>Budget: $30. No wishlists allowed!</b></p>'+
+        '<button class="b w" data-a="hide">Hide it</button></div>';
+    } else if(mi>=0){
+      h='<div class="win c"><div class="ttl">Welcome back!</div><p>Hello <b>'+esc(people[mi].name)+'</b>! 🎅</p>'+
+        '<button class="b g w" data-a="show" data-i="'+mi+'">Show me my person</button>'+
+        '<p class="sm">Not '+esc(people[mi].name)+'? <button class="lnk" data-a="forget">Click here</button></p></div>';
+    } else {
+      var o='<option value="">-- I am... --</option>';
+      people.forEach(function(p,i){o+='<option value="'+i+'">'+esc(p.name)+'</option>'});
+      h='<div class="win c"><div class="ttl">🎁 Get your Kris Kringle!</div><p>Pick who you are, then draw.</p>'+
+        '<select id="who" aria-label="Who are you">'+o+'</select>'+
+        '<button class="b g w" data-a="go">🎁 DRAW MY NAME 🎁</button><div class="er">'+esc(ui.msg)+'</div>'+
+        '<p class="sm">Only draw once, on your own phone!</p></div>';
+    }
+    if(isOwner()){
+      h+='<div class="win sm"><div class="ttl">Organiser corner</div>Tap <b>Share</b>, let anyone with the link view, then send the link on Messenger. You ran the draw so you could technically see results. No peeking!<br><br>'+
+        (ui.rc?'<input id="pc" type="password" inputmode="numeric" maxlength="4" placeholder="Passcode" style="width:100%;font:16px Verdana,sans-serif;padding:8px;margin-bottom:6px;border:2px inset var(--bd);background:var(--inp);color:var(--text)"><button class="b" data-a="reset">Confirm start over</button> <button class="lnk" data-a="cancel">Cancel</button>':'<button class="b" data-a="reset">Start over</button>')+'<div class="er">'+esc(ui.pm||(ui.msg&&st.drawn&&!ui.msg.indexOf('Sav')?ui.msg:''))+'</div></div>';
+    }
+    return h;
+  }
+
+  function render(){
+    var h=head();
+    if(st.drawn)h+=pickHtml();
+    else if(loaded&&isOwner())h+=ownerHtml();
+    else h+=waitHtml();
+    app.innerHTML=h+foot();
+  }
+
+  function spin(i){
+    app.innerHTML=head()+'<div class="win c"><div class="ttl">Drawing...</div><div class="big" id="sp">🎲</div><p class="sm">Santa’s shuffling the hat...</p></div>'+foot();
+    var n=0,t=setInterval(function(){
+      var el=$('sp');if(el)el.textContent=people[Math.floor(Math.random()*people.length)].name;
+      if(++n>=14){clearInterval(t);setMe(people[i].name);ui.reveal=i;render()}
+    },120);
+  }
+
+  function solve(){
+    var n=people.length,order=[],i;
+    for(i=0;i<n;i++)order.push(i);
+    var res=new Array(n).fill(-1),taken=new Array(n).fill(false);
+    function shuf(a){for(var k=a.length-1;k>0;k--){var j=Math.floor(Math.random()*(k+1)),t=a[k];a[k]=a[j];a[j]=t}return a}
+    function go(k){
+      if(k===n)return true;
+      var g=order[k],c=shuf(order.slice());
+      for(var x=0;x<c.length;x++){
+        var r=c[x];
+        if(!taken[r]&&r!==g&&people[g].partner!==r){res[g]=r;taken[r]=true;if(go(k+1))return true;taken[r]=false;res[g]=-1}
+      }
+      return false;
+    }
+    return go(0)?res:null;
+  }
+
+  function buildDoc(s){
+    var c=document.documentElement.cloneNode(true);
+    c.querySelector('#app').innerHTML='';
+    c.querySelector('#snow').innerHTML='';
+    c.querySelector('#state').textContent=JSON.stringify(s).replace(/</g,'\\u003c');
+    return '<!DOCTYPE html>\n'+c.outerHTML;
+  }
+  function save(s){
+    if(!art){ui.msg='Saving isn’t available here. Open this page from its own link.';render();return}
+    ui.msg='Saving... please wait.';render();
+    art.publish(buildDoc(s)).catch(function(e){ui.msg='Could not save: '+((e&&e.message)||'try again');render()});
+  }
+
+  app.addEventListener('click',function(e){
+    var b=e.target.closest('[data-a]');if(!b)return;
+    var a=b.dataset.a,i=+b.dataset.i;
+    if(a==='draw'){
+      var r=solve();
+      if(!r){ui.msg='No valid draw is possible with those partner links.';render();return}
+      save({drawn:true,id:Math.random().toString(36).slice(2),people:st.people,enc:r.map(function(t){return enc(people[t].name)})});
+    }
+    else if(a==='go'){
+      var v=$('who').value;
+      if(v===''){ui.msg='Pick your name first!';render();return}
+      ui.msg='';spin(+v);
+    }
+    else if(a==='show'){ui.reveal=i;render()}
+    else if(a==='hide'){delete ui.reveal;render()}
+    else if(a==='forget'){setMe('');render()}
+    else if(a==='cancel'){ui.rc=false;ui.pm='';render()}
+    else if(a==='reset'){
+      if(!ui.rc){ui.rc=true;ui.pm='';render();return}
+      if(($('pc').value||'')!=='2659'){ui.pm='Wrong passcode.';render();return}
+      ui.pm='';
+      ui.rc=false;setMe('');save({drawn:false,id:'',people:st.people,enc:[]});
+    }
+  });
+
+  render();
+  (async function(){
+    try{if(window.claude){user=await claude.use('user');art=await claude.use('artifact')}}catch(e){}
+    loaded=true;render();
+  })();
+})();
+</script>
+
+
+</body></html>
